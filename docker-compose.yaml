@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  api:
+    image: "rsalim1/evaluation-neo4j:0.0.1"
+    ports:
+      - "8200:8000/tcp"
+    networks:
+      - neo4j-network
+    depends_on:
+      - neo4j
+    environment:
+      - LOGGING_FILE=/var/logs/api.log
+      - NEO4J_HOST=neo4j
+      - TIME_TO_WAIT_DB=12
+    volumes:
+      - .:/var/logs/
+  neo4j:
+    image: "datascientest/neo4j"
+    container_name: "neo4j"
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    networks:
+      - neo4j-network
+networks:
+  neo4j-network:
