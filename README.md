@@ -1,9 +1,23 @@
+# Besoin(s)
+
+On veut construire un graphe qui permet de représenter les stations, les liaisons par train, les liaisons à pied et les correspondances. On choisira donc de créer un nœud pour chaque ligne qui passe par chaque station. Avec l'exemple donné précédemment, la station Arts et Métiers sera représentée par deux nœuds : un pour la ligne 3 et un pour la ligne 11..
+On pourra créer une relation entre ces deux nœuds pour représenter la correspondance par une relation. Cette relation pourra être représentée dans les deux sens.
+Entre deux stations qui sont sur la même ligne, on pourra représenter la liaison par une relation. Cette relation doit être représentée dans les deux sens.
+
+On estimera qu'une correspondance prend 4 minutes. On estimera aussi qu'un métro se déplace à une vitesse de 40 km/h et une personne à 4 km/h.
+On utilisera les coordonnées x, y des stations pour calculer la distance entre deux stations.
+
+- Les fichiers des stations est disponible [ici](https://github.com/pauldechorgnat/cool-datasets/raw/master/ratp/stations.csv) et celui des liaisons est disponible [ici](https://github.com/pauldechorgnat/cool-datasets/raw/master/ratp/liaisons.csv).
+---
+
+The section below answers each given question.
+
 # Evaluation
 
 A docker compose is given, it will start two different services, the `Neo4j` one and the `API`. Please ensure you don't
 have any running containers / application on ports: `8200`, `7474` and `7687`. 
 
-To start the servicesn run `docker-compose up -d`
+To start the services run `docker-compose up -d`
 
 ## Create Objects
 
